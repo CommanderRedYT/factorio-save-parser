@@ -2,6 +2,16 @@
   "name": "factorio-save-parser",
   "version": "1.0.0",
   "license": "AGPL-3.0",
+  "author": "CommanderRedYT",
+  "keywords": ["parser", "factorio"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CommanderRedYT/factorio-save-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CommanderRedYT/factorio-save-parser/issues"
+  },
+  "homepage": "https://github.com/CommanderRedYT/factorio-save-parser",
   "scripts": {
     "prepare": "patch-package",
     "build": "rollup --config",
