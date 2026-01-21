@@ -1,43 +1,46 @@
 import { builtinModules } from 'node:module';
 
-import clear from 'rollup-plugin-clear';
+import dts from 'rollup-plugin-dts';
 
 import pkg from './package.json' with { type: 'json' };
 
 import nodeResolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
 
-/** @type {import('rollup').RollupOptions} */
-const config = {
-    input: 'src/index.ts',
-    output: [
-        {
-            file: pkg.main,
-            format: 'cjs',
-            sourcemap: true,
+const config = [
+    {
+        input: `dist/types/index.d.ts`,
+        plugins: [dts()],
+        output: {
+            file: `dist/index.d.ts`,
+            format: 'es',
         },
-        {
-            file: pkg.module,
-            format: 'esm',
-            sourcemap: true,
-        },
-    ],
-    external: [
-        ...builtinModules,
-        ...(pkg.dependencies ? Object.keys(pkg.dependencies) : []),
-        ...(pkg.devDependencies ? Object.keys(pkg.devDependencies) : []),
-        ...(pkg.peerDependencies ? Object.keys(pkg.peerDependencies) : []),
-    ],
-    plugins: [
-        clear({
-            targets: ['dist'],
-        }),
-        nodeResolve(),
-        typescript({
-            tsconfig: './tsconfig.json',
-            exclude: ['__tests__', '**/*.test.ts'],
-        }),
-    ],
-};
+    },
+    {
+        input: 'dist/out/index.js',
+        output: [
+            {
+                file: pkg.main,
+                format: 'cjs',
+                sourcemap: true,
+                exports: 'named',
+            },
+            {
+                file: pkg.module,
+                format: 'esm',
+                sourcemap: true,
+                exports: 'named',
+            },
+        ],
+        external: [
+            ...builtinModules,
+            ...(pkg.dependencies ? Object.keys(pkg.dependencies) : []),
+            ...(pkg.devDependencies ? Object.keys(pkg.devDependencies) : []),
+            ...(pkg.peerDependencies ? Object.keys(pkg.peerDependencies) : []),
+        ],
+        plugins: [
+            nodeResolve(),
+        ],
+    },
+];
 
 export default config;

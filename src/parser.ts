@@ -1,15 +1,16 @@
-import type {
-    FactorioSaveFile,
-    SaveHeaderMod,
-    Version,
-    Version48,
-} from '@types';
 import type { CentralDirectory } from 'unzipper';
 
 import path from 'node:path';
 
 import { compare as compareVersions } from 'compare-versions';
 import unzipper from 'unzipper';
+
+import type {
+    FactorioSaveFile,
+    SaveHeaderMod,
+    Version,
+    Version48,
+} from '@/types';
 
 import { InvalidArgumentError, InvalidSaveFileError } from '@/errors';
 

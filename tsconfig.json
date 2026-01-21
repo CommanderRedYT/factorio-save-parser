@@ -1,8 +1,11 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "outDir": "dist/",
-    "baseUrl": ".",
+    "outDir": "dist/out",
+    "baseUrl": "src/",
+    "rootDir": "src/",
+    "declaration": true,
+    "declarationDir": "dist/types",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -43,9 +46,9 @@
     "allowImportingTsExtensions": false,
 
     "paths": {
-      "@/*": ["./src/*"],
-      "@types": ["./types/index.d.ts"]
+      "@/*": ["./*"],
+      "@types": ["./types.d.ts"]
     }
   },
-  "include": ["src/", "types/", "__tests__/"]
+  "include": ["src/"]
 }
