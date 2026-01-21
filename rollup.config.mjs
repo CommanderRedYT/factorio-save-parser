@@ -30,10 +30,11 @@ const config = {
     ],
     plugins: [
         clear({
-            targets: ['build'],
+            targets: ['dist'],
         }),
         nodeResolve(),
         typescript({
+            tsconfig: './tsconfig.json',
             exclude: ['__tests__', '**/*.test.ts'],
         }),
     ],
