@@ -8,7 +8,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 
 const config = [
     {
-        input: `dist/types/index.d.ts`,
+        input: `dist/types/parser.d.ts`,
         plugins: [dts()],
         output: {
             file: `dist/index.d.ts`,
@@ -16,7 +16,7 @@ const config = [
         },
     },
     {
-        input: 'dist/out/index.js',
+        input: 'dist/out/parser.js',
         output: [
             {
                 file: pkg.main,
