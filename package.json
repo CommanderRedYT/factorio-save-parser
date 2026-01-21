@@ -20,8 +20,12 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/es/index.mjs",
   "exports": {
