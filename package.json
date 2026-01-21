@@ -31,11 +31,11 @@
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/es/index.mjs",
   "exports": {
-    "types": "./dist/index.d.ts",
+    "types": "./dist/types/index.d.ts",
     "import": "./dist/es/index.mjs",
     "default": "./dist/cjs/index.cjs"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.3",

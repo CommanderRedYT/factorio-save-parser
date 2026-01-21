@@ -1,1 +1,1 @@
-export { parseSaveFile } from '@/parser';
+export { parseLevelInitData, parseSaveFile } from '@/parser';
