@@ -28,14 +28,14 @@
     "dist/es",
     "dist/types"
   ],
-  "main": "./dist/cjs/index.cjs",
+  "types": "./dist/index.d.ts",
   "module": "./dist/es/index.mjs",
+  "main": "./dist/cjs/index.cjs",
   "exports": {
-    "types": "./dist/types/index.d.ts",
+    "types": "./dist/index.d.ts",
     "import": "./dist/es/index.mjs",
     "default": "./dist/cjs/index.cjs"
   },
-  "types": "./dist/types/index.d.ts",
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.3",

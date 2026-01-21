@@ -1,18 +1,16 @@
-import type { CentralDirectory } from 'unzipper';
-
-import path from 'node:path';
-
-import { compare as compareVersions } from 'compare-versions';
-import unzipper from 'unzipper';
-
 import type {
     FactorioSaveFile,
     SaveHeaderMod,
     Version,
     Version48,
-} from '@/types';
+} from 'types';
+import type { CentralDirectory } from 'unzipper';
 
-import { InvalidArgumentError, InvalidSaveFileError } from '@/errors';
+import path from 'node:path';
+
+import { compare as compareVersions } from 'compare-versions';
+import { InvalidArgumentError, InvalidSaveFileError } from 'errors';
+import unzipper from 'unzipper';
 
 // Written with the help of the information on https://forums.factorio.com/viewtopic.php?t=47014
 export function parseLevelInitData(data: DataView): FactorioSaveFile {

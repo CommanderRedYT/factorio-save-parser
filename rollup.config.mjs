@@ -37,9 +37,7 @@ const config = [
             ...(pkg.devDependencies ? Object.keys(pkg.devDependencies) : []),
             ...(pkg.peerDependencies ? Object.keys(pkg.peerDependencies) : []),
         ],
-        plugins: [
-            nodeResolve(),
-        ],
+        plugins: [nodeResolve()],
     },
 ];
 

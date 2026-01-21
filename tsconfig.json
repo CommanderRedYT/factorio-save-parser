@@ -44,11 +44,6 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": false,
-
-    "paths": {
-      "@/*": ["./*"],
-      "@types": ["./types.d.ts"]
-    }
   },
   "include": ["src/"]
 }
