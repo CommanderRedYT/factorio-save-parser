@@ -1,0 +1,1 @@
+export { parseSaveFile } from '@/parser';

@@ -1,0 +1,53 @@
+{
+  "name": "factorio-save-parser",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "prepare": "patch-package",
+    "build": "rollup --config",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/es/index.mjs",
+  "exports": {
+    "types": "./types/index.d.ts",
+    "import": "./dist/es/index.mjs",
+    "default": "./dist/cjs/index.cjs"
+  },
+  "types": "./types/index.d.ts",
+  "devDependencies": {
+    "@eslint/compat": "^2.0.0",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.1",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/adm-zip": "^0.5.7",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24",
+    "eslint": "^9.39.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-no-relative-import-paths": "^1.6.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "jest": "^30.2.0",
+    "patch-package": "^8.0.1",
+    "prettier": "^3.8.0",
+    "rollup": "^4.55.2",
+    "rollup-plugin-clear": "^2.0.7",
+    "ts-jest": "^29.4.6",
+    "tslib": "^2.8.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "compare-versions": "^6.1.1"
+  }
+}
