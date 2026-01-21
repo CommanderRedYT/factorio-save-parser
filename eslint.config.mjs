@@ -100,14 +100,6 @@ export default tseslint.config(
                 },
             ],
 
-            'no-relative-import-paths/no-relative-import-paths': [
-                'warn',
-                {
-                    allowSameFolder: true,
-                    rootDir: 'src',
-                },
-            ],
-
             '@typescript-eslint/consistent-type-imports': [
                 'error',
                 {

@@ -1,4 +1,4 @@
-import { parseSaveFile } from '../src/parser';
+import { parseSaveFile } from '../parser';
 
 const saveFile = './test_files/_autosave4.zip';
 

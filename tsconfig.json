@@ -45,5 +45,5 @@
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": false,
   },
-  "include": ["src/"]
+  "include": ["src/", "__tests__/"]
 }
