@@ -1,6 +1,6 @@
 {
   "name": "factorio-save-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "AGPL-3.0",
   "author": "CommanderRedYT",
   "keywords": [
@@ -24,7 +24,8 @@
     "prepublish": "npm run build"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/es/index.mjs",
