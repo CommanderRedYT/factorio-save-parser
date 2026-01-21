@@ -16,7 +16,6 @@
   },
   "homepage": "https://github.com/CommanderRedYT/factorio-save-parser",
   "scripts": {
-    "prepare": "patch-package",
     "build": "rollup --config",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -41,6 +40,7 @@
     "@types/adm-zip": "^0.5.7",
     "@types/jest": "^30.0.0",
     "@types/node": "^24",
+    "@types/unzipper": "^0.10.11",
     "eslint": "^9.39.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
@@ -51,7 +51,6 @@
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "jest": "^30.2.0",
-    "patch-package": "^8.0.1",
     "prettier": "^3.8.0",
     "rollup": "^4.55.2",
     "rollup-plugin-clear": "^2.0.7",
@@ -61,8 +60,8 @@
     "typescript-eslint": "^8.46.4"
   },
   "dependencies": {
-    "adm-zip": "^0.5.16",
-    "compare-versions": "^6.1.1"
+    "compare-versions": "^6.1.1",
+    "unzipper": "^0.12.3"
   },
   "engines": {
     "node": ">= 20"

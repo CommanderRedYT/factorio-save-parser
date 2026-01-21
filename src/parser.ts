@@ -4,11 +4,12 @@ import type {
     Version,
     Version48,
 } from '@types';
+import type { CentralDirectory } from 'unzipper';
 
 import path from 'node:path';
 
-import AdmZip from 'adm-zip';
 import { compare as compareVersions } from 'compare-versions';
+import unzipper from 'unzipper';
 
 import { InvalidArgumentError, InvalidSaveFileError } from '@/errors';
 
@@ -176,7 +177,7 @@ export function parseLevelInitData(data: DataView): FactorioSaveFile {
 export async function parseSaveFile(
     filepath: string,
 ): Promise<FactorioSaveFile | undefined> {
-    let zipFile: AdmZip;
+    let centralDirectory: CentralDirectory;
     let levelInitDatName = '';
 
     try {
@@ -194,14 +195,22 @@ export async function parseSaveFile(
             throw new InvalidArgumentError('File path is not a zip file.');
         }
 
-        zipFile = new AdmZip(resolvedPath);
+        centralDirectory = await unzipper.Open.file(resolvedPath);
     } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e);
         return undefined;
     }
 
-    const levelInitDatContent = zipFile.readFile(levelInitDatName);
+    const file = centralDirectory.files.find(f => f.path === levelInitDatName);
+
+    if (!file) {
+        throw new InvalidSaveFileError(
+            'File does not appear to be a save file',
+        );
+    }
+
+    const levelInitDatContent = await file?.buffer();
 
     if (levelInitDatContent === null) {
         throw new InvalidSaveFileError(
