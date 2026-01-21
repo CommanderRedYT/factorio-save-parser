@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { parseSaveFile } from '@/index';
 
 const saveFile = './test_files/_autosave4.zip';
@@ -19,8 +18,19 @@ describe('save-parser', () => {
     it('should parse the save-file correctly', async () => {
         const parsed = await parseSaveFile(saveFile);
 
-        console.dir(parsed);
-
         expect(parsed).toBeDefined();
+        expect(parsed!.factorioVersion.major).toBe(2);
+        expect(parsed!.factorioVersion.minor).toBe(0);
+        expect(parsed!.factorioVersion.patch).toBe(72);
+        expect(parsed!.factorioVersion.build).toBe(0);
+        expect(parsed!.factorioVersion.asString).toBe('2.0.72.0');
+        expect(parsed!.baseMod).toBe('base');
+        expect(parsed!.campaign).toBe('freeplay');
+        expect(parsed!.mods).toHaveLength(4);
+        expect(parsed!.mods[0]!.name).toBe('base');
+        expect(parsed!.mods[0]!.version.major).toBe(2);
+        expect(parsed!.mods[0]!.version.minor).toBe(0);
+        expect(parsed!.mods[0]!.version.patch).toBe(72);
+        expect(parsed!.mods[0]!.crc).toBe(1879415942);
     });
 });
