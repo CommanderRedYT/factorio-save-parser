@@ -109,6 +109,7 @@ export function parseLevelInitData(data: DataView): FactorioSaveFile {
             major,
             minor,
             patch,
+            asString: `${major}.${minor}.${patch}`,
         };
     }
 

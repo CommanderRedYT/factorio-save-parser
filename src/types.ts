@@ -8,6 +8,7 @@ export declare interface Version48 {
     major: number; // uint16
     minor: number; // uint16
     patch: number; // uint16
+    asString: string;
 }
 
 export declare interface Version {
